@@ -5,20 +5,24 @@ import {
   Links,
   Meta,
   Outlet,
+  redirect,
   Scripts,
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
 
 import type { LinksFunction } from "@remix-run/node";
-
+import { createEmptyContact, getContacts } from "./data";
 import appStylesHref from "./app.css?url";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
 ];
 
-import { getContacts } from "./data";
+export const action = async () => {
+  const contact = await createEmptyContact();
+  return redirect(`/contacts/${contact.id}/edit`);
+};
 
 export const loader = async () => {
   const contacts = await getContacts();
