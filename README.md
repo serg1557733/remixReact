@@ -1,6 +1,6 @@
-# Welcome to Remix!
+# My tests Remix using
 
-- [Remix Docs](https://remix.run/docs)
+- [Remix tutorial](https://remix.run/docs/en/main/start/tutorial)
 
 ## Development
 
